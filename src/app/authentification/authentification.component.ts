@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./authentification.component.css']
 })
 export class AuthentificationComponent {
-
+  changeform: boolean = true;
 }
