@@ -1,0 +1,24 @@
+h1{
+    color: #370f89;
+}
+table{
+    border: 4px solid black;
+margin: 0 auto;
+width: 70%;}
+thead{
+    border: 2px solid black;
+    background-color: #bda1f5;
+    color: #370f89;
+}
+tbody {
+    border: 2px solid black;
+}
+tr{
+    border: 2px solid black;
+}
+th{
+    border: 2px solid black;
+}
+td{
+    border: 2px solid black;
+}

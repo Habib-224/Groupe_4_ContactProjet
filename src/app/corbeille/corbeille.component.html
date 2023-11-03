@@ -1,1 +1,92 @@
-<p>corbeille works!</p>
+<h1 class="text-center ">{{titreTableau}}</h1>
+<table class="table w-80 border-2" *ngFor="let contact of contacts" (click)="onSelect(contact)">
+    <thead class=" border-2 ">
+      <tr  >
+        <th scope="col"> Id{{selectedContact.email}}</th>
+        <th scope="col">Prenom{{selectedContact.prenom}}</th>
+        <th scope="col">Nom {{selectedContact.nom}}</th>
+        <th scope="col">Email {{selectedContact.email}}</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+       
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+       
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Mark@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>mari@gmail.com</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+     
+    </tbody>
+  </table>
