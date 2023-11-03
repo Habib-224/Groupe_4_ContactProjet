@@ -1,0 +1,29 @@
+
+.logo img
+{
+  height: 50px;
+  width: 100%;
+}
+.logo{
+  margin-left: 20px;
+}
+.tofprofil{
+  margin-right: 20px;
+}
+.tofprofil img
+{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+#menunav{
+  background-color: #7d46ec81;
+}
+#navbarNav li{
+  margin-right: 20px;
+  font-size: 18px;
+
+}
+#boutonsearch{
+  background-color: #7d46ec81;
+}

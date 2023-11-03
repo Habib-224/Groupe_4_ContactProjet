@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CorbeilleComponent } from './corbeille/corbeille.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthentificationComponent,
     AccueilComponent,
-    CorbeilleComponent
+    CorbeilleComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
