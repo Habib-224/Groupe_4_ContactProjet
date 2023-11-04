@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent {
-  
+
+
+  afficheContact = JSON.parse(localStorage.getItem('contacts') || "{}") ;
 }

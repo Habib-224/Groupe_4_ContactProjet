@@ -7,6 +7,10 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { AccueilComponent } from './accueil/accueil.component';
 import { CorbeilleComponent } from './corbeille/corbeille.component';
 import { MenuComponent } from './menu/menu.component';
+import { CouleurfondDirective } from './couleurfond.directive';
+import { NewContactComponent } from './new-contact/new-contact.component';
+import { RouterModule } from '@angular/router';
+import { StatistiqueComponent } from './statistique/statistique.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,16 @@ import { MenuComponent } from './menu/menu.component';
     AuthentificationComponent,
     AccueilComponent,
     CorbeilleComponent,
-    MenuComponent
+    MenuComponent,
+    CouleurfondDirective,
+    NewContactComponent,
+    StatistiqueComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

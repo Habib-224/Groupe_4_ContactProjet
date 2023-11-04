@@ -1,0 +1,15 @@
+#imageajout img{
+  height: 28rem;
+  width: 100%;
+}
+
+#imageajout {
+
+}
+#ajoutcontainer{
+box-shadow: 0px 0px 10px #7d46ec42 ;
+}
+#ajoutcontainer h1{
+  color: #CE66CD;
+  font-weight:  bold;
+}
