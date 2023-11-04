@@ -1,92 +1,53 @@
-<h1 class="text-center ">{{titreTableau}}</h1>
-<table class="table w-80 border-2" *ngFor="let contact of contacts" (click)="onSelect(contact)">
-    <thead class=" border-2 ">
-      <tr  >
-        <th scope="col"> Id{{selectedContact.email}}</th>
-        <th scope="col">Prenom{{selectedContact.prenom}}</th>
-        <th scope="col">Nom {{selectedContact.nom}}</th>
-        <th scope="col">Email {{selectedContact.email}}</th>
 
+<div class="container p-5ng">
+  <h1 class="text-center ">{{titreTableau}}</h1>
+  <!-- <input class="form-control" type="text" placeholder="Rechercher un contact..."  [(ngModel)]="searchText"> -->
+  <div class="row cardp mb-5">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Contact Suprimés</h5>
+        <h1 class="card-subtitle mb-2 text-body-secondary">127</h1>
+        
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Contacts Restaurés</h5>
+        <h1 class="card-subtitle mb-2 text-body-secondary">27</h1>
+        
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Contacts Inactifs</h5>
+        <h1 class="card-subtitle mb-2 text-body-secondary">10</h1>
+      </div>
+    </div>
+    <button class="btn ajout  btn-primary btn-sm" (click)="ajouterContactAuLocalStorage()">Ajouter un contact</button>
+
+  </div>
+  <table class="table table-hover  table-responsive-lg">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Adresse Email</th>
+        <th>restaurer</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let contact of contacts ">
+        <td>{{contact.id}}</td>
+        <td>{{contact.nom}}</td>
+        <td>{{contact.prenom}}</td>
+        <td>{{contact.email}}</td>
+        <button class=" btn-primary bg-secondary text-white border-0 " (click)="supprimerContact(contact.id)">Restaurer</button>
        
+
+
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-       
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Mark@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>mari@gmail.com</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        
-      </tr>
-     
     </tbody>
   </table>
+  
+</div>
