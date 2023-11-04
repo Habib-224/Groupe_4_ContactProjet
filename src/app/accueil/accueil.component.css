@@ -3,7 +3,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.chiffreitem
+.chiffreitem .card
 {
-  
+border-left: 8px solid #7d46ec81;
+  /* border-left-color:#7d46ec81; */
+}
+.tofcontact img
+{
+  height: 35px;
+  width: 35px;
+  /* border-radius: 50%; */
 }

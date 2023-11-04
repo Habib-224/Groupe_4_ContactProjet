@@ -5,7 +5,7 @@
   width: 100%;
 }
 .logo{
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 .tofprofil{
   margin-right: 20px;
@@ -14,7 +14,7 @@
 {
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 #menunav{
   background-color: #7d46ec81;
