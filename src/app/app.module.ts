@@ -9,8 +9,9 @@ import { CorbeilleComponent } from './corbeille/corbeille.component';
 import { MenuComponent } from './menu/menu.component';
 import { CouleurfondDirective } from './couleurfond.directive';
 import { NewContactComponent } from './new-contact/new-contact.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { StatistiqueComponent } from './statistique/statistique.component';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,11 @@ import { StatistiqueComponent } from './statistique/statistique.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    RouterModule,
+    NgForm
+
 
   ],
   providers: [],

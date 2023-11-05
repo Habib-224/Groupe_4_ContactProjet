@@ -1,15 +1,16 @@
 
 <app-menu></app-menu>
+
 <app-statistique></app-statistique>
-<div class="homecontainer">
+<div class="homecontainer" >
   <div class="tabcontainer  mt-5">
     <div class="card shadow mb-4">
       <div class="card-header py-3 ">
           <h5 class="m-0 font-weight-bold  fw-bold text-center">Liste des Contacts</h5>
       </div>
-      <div class="card-body">
-          <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <div class="card-body"  >
+          <div class="table-responsive" *ngIf="contactadd"  >
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  >
                   <thead >
                       <tr>
                           <th appCouleurfond class="text-white fw-bold" >photo</th>
@@ -30,17 +31,17 @@
                         <th>Action</th>
                       </tr> -->
                   </tfoot>
-                  <tbody>
+                  <tbody >
                       <tr >
                           <td class="d-flex justify-content-center">
                             <div class="tofcontact">
                               <img src="https://img.freepik.com/photos-gratuite/hotesse-air-coup-moyen-posant_23-2150312701.jpg?size=626&ext=jpg&ga=GA1.1.2145246215.1689776414&semt=ais" class="rounded-circle" alt="">
                             </div>
                           </td>
-                          <td >{{afficheContact.prenomContact }}</td>
-                          <td>{{afficheContact.nomContact}}</td>
-                          <td>{{afficheContact.emailContact}}</td>
-                          <td>{{afficheContact.telephone}}</td>
+                          <td >{{ contactadd.nom }}</td>
+                          <td>{{ contactadd.prenom }}</td>
+                          <td> {{ contactadd.email }}</td>
+                          <td>{{ contactadd.numero }}</td>
                           <td class="d-flex justify-content-center">
                             <button class="btn" appCouleurfond>
                               <i class="bi bi-person-fill-dash" style="color:white"></i>
@@ -103,4 +104,43 @@
   </div>
   </div>
 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" appCouleurfond>
+          <h5 class="modal-title text-center fw-bold" id="exampleModalLabel" >Nouveau Contact</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" (ngSubmit)="onSubmit()">
+            <div class="col-md-12">
+              <label for="nom" class="form-label">Nom:</label>
+              <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"  [(ngModel)]="contactadd.nom"  required>
+            </div>
+            <div class="col-md-12">
+              <label for="prenom" class="form-label">Prenom:</label>
+              <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prenom" [(ngModel)]="contactadd.prenom"   required>
+            </div>
+            <div class="col-md-12">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email"  name="email" placeholder="email" [(ngModel)]="contactadd.email"  required>
+            </div>
+            <div class="col-md-12">
+              <label for="numero" class="form-label">Numero:</label>
+              <input type="number" class="form-control" id="numero" name="numero" placeholder="Numero" [(ngModel)]="contactadd .numero"  required>
+            </div>
+            <div class="input-group mt-3 mb-2">
+              <label class="input-group-text" for="inputGroupFile01">Upload</label>
+              <input type="file" class="form-control" id="inputGroupFile01">
+            </div >
+            <button type="submit" class="btn col-6" appCouleurfond  >Ajouter</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
