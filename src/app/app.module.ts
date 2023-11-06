@@ -30,7 +30,7 @@ import { FormsModule, NgForm } from '@angular/forms';
     RouterModule,
     FormsModule,
     RouterModule,
-    NgForm
+    
 
 
   ],

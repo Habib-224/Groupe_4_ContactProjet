@@ -8,9 +8,9 @@
       <div class="card-header py-3 ">
           <h5 class="m-0 font-weight-bold  fw-bold text-center">Liste des Contacts</h5>
       </div>
-      <div class="card-body"  >
-          <div class="table-responsive" *ngIf="contactadd"  >
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  >
+      <div class="card-body">
+          <div class="table-responsive"  >
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  *ngIf="viewContact"  >
                   <thead >
                       <tr>
                           <th appCouleurfond class="text-white fw-bold" >photo</th>
@@ -38,10 +38,10 @@
                               <img src="https://img.freepik.com/photos-gratuite/hotesse-air-coup-moyen-posant_23-2150312701.jpg?size=626&ext=jpg&ga=GA1.1.2145246215.1689776414&semt=ais" class="rounded-circle" alt="">
                             </div>
                           </td>
-                          <td >{{ contactadd.nom }}</td>
-                          <td>{{ contactadd.prenom }}</td>
-                          <td> {{ contactadd.email }}</td>
-                          <td>{{ contactadd.numero }}</td>
+                          <td > {{ viewContact.nom }}</td>
+                          <td>{{ viewContact.prenom }}</td>
+                          <td>{{ viewContact.email }} </td>
+                          <td>{{ viewContact.numero}}</td>
                           <td class="d-flex justify-content-center">
                             <button class="btn" appCouleurfond>
                               <i class="bi bi-person-fill-dash" style="color:white"></i>
@@ -112,27 +112,53 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="" (ngSubmit)="onSubmit()">
+          <form novalidate action=""  (ngSubmit)="onSubmit()" >
             <div class="col-md-12">
               <label for="nom" class="form-label">Nom:</label>
-              <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"  [(ngModel)]="contactadd.nom"  required>
+              <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" [(ngModel)]="contactdetail.nom" required #nomverif ="ngModel"
+              [ngClass]="{'is-invalid' : nomverif.touched && !nomverif.value }">
+              <div class="invalid-feedback">
+                <span *ngIf="nomverif.errors">
+                  Veillez entrer votre nom
+                </span>
+               >
+              </div>
             </div>
             <div class="col-md-12">
               <label for="prenom" class="form-label">Prenom:</label>
-              <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prenom" [(ngModel)]="contactadd.prenom"   required>
+              <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prenom" [(ngModel)]="contactdetail.prenom"  required #prenomVerif ="ngModel"
+              [ngClass]="{'is-invalid': prenomVerif.touched && !prenomVerif.value  }">
+              <div class="invalid-feedback">
+                <span *ngIf="prenomVerif.errors">
+                  Veillez entrer votre prenom
+                </span>
+
+              </div>
             </div>
             <div class="col-md-12">
               <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email"  name="email" placeholder="email" [(ngModel)]="contactadd.email"  required>
+              <input type="email" class="form-control" id="email"  name="email" placeholder="email" [(ngModel)]="contactdetail.email"  required #emailVerif="ngModel"
+              [ngClass]="{'is-invalid': emailVerif.touched && !emailVerif.value}" >
+              <div class="invalid-feedback">
+                <span *ngIf="emailVerif.errors">
+                  Veillez entrer votre email
+                </span>
+              </div>
             </div>
             <div class="col-md-12">
               <label for="numero" class="form-label">Numero:</label>
-              <input type="number" class="form-control" id="numero" name="numero" placeholder="Numero" [(ngModel)]="contactadd .numero"  required>
+              <input type="number" class="form-control" id="numero" name="numero" placeholder="Numero" [(ngModel)]="contactdetail.numero"  required #numeroVerif ="ngModel"
+              [ngClass]="{'is-invalid': numeroVerif.touched && !numeroVerif.value}">
+              <div class="invalid-feedback">
+                <span *ngIf="emailVerif.errors">
+                  Veillez entrer votre numero
+                </span>
+              </div>
             </div>
             <div class="input-group mt-3 mb-2">
               <label class="input-group-text" for="inputGroupFile01">Upload</label>
               <input type="file" class="form-control" id="inputGroupFile01">
-            </div >
+            </div >""
             <button type="submit" class="btn col-6" appCouleurfond  >Ajouter</button>
           </form>
         </div>

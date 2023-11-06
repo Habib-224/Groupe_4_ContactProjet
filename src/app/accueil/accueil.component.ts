@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { Contact } from './contact';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent  implements OnInit    {
 
 
-  // afficheContact = JSON.parse(localStorage.getItem('contacts') || "{}") ;
-  // Debut Section Declaration Tableau d'objet
+  public contact  : Contact = new Contact();
+
+// declaration du tableau d'objet general
  public contactdata: any[] = [
   {
     id: '1',
@@ -28,45 +31,32 @@ export class AccueilComponent implements OnInit {
     }]
   },
 ];
-constructor(private router: Router) {}
 
-onSubmit(): void {
-  // Stockez les données du formulaire dans le localStorage
-
-
-  localStorage.setItem('contactadd', JSON.stringify(this.contactadd));
-
-  // Redirigez l'utilisateur vers un autre composant ou une autre page
-  // this.router.navigate(['/accueil-composant']);
-
-}
-contactadd = {
+contactdetail: any = {
   id: '',
   nom: '',
   prenom: '',
   email:'',
   numero: '',
   photo: '',
-  etat : 0
 }
-public  recupData : any;
 
+constructor(private router: Router) {}
+
+onSubmit(): void {
+  // Stockez les données du formulaire dans le localStorage
+  localStorage.setItem('contactdetail', JSON.stringify(this.contactdetail));
+
+  // Redirigez l'utilisateur vers un autre composant ou une autre page
+  this.router.navigate(['/accueil.component']);
+}
+viewContact: any;
 ngOnInit(): void {
   // Récupérez les données du localStorage lors de l'initialisation du composant
-  // const recupDataString = localStorage.getItem('contactadd ');
-  // if (recupDataString) {
-  //   this.recupData = JSON.parse(recupDataString);
-  // }
-
-  this. recupData= localStorage.getItem('contactdata');
-  //  alert("les donnes du local" + JSON.stringify(this.storedUsers));
-   if (this. recupData) {
-     // Si des données sont présentes dans le local storage, désérialisez-les et mettez-les à jour dans votre tableau d'utilisateurs
-     this.contactdata = JSON.parse(this. recupData);
-   } else {
-     // Si aucune donnée n'est présente dans le local storage, initialisez-le avec vos données par défaut
-     localStorage.setItem('user', JSON.stringify(this.contactdata));
- }
+  const viewContactString = localStorage.getItem('contactdetail');
+  if (viewContactString) {
+    this.viewContact = JSON.parse(viewContactString);
+  }
 }
 
 }
